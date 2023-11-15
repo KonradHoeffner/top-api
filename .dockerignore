@@ -1,0 +1,6 @@
+**/Dockerfile
+**/*.md
+**/LICENSE
+docker-compose.*
+*.html
+target

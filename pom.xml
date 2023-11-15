@@ -4,24 +4,33 @@
 
 	<groupId>care.smith.top</groupId>
 	<artifactId>top-api</artifactId>
-	<version>0.9.7</version>
+	<version>${api.version}</version>
 
 	<name>TOP API</name>
 	<description>REST API of the TOP framework</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.10</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<groupId>care.smith.top</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>2.7.10</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<properties>
-		<java.version>11</java.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jackson-bom.version>2.15.0-rc3</jackson-bom.version>
 	</properties>
-
+<!--
 	<distributionManagement>
 		<repository>
 			<id>github</id>
@@ -29,7 +38,7 @@
 			<url>https://maven.pkg.github.com/Onto-Med/top-api</url>
 		</repository>
 	</distributionManagement>
-
+-->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
